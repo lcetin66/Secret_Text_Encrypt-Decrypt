@@ -100,7 +100,7 @@ def decrypt_file():
 
 # --- GUI ---
 try:
-    image = PhotoImage(file="secret.png")
+    image = PhotoImage(file="images/secret.png")
     label = Label(window, image=image)
     label.place(x=125, y=20)
 except TclError:
