@@ -102,10 +102,13 @@ def decrypt_file():
 try:
     image = PhotoImage(file="images/secret.png")
     label = Label(window, image=image)
-    label.place(x=125, y=20)
+    label.place(x=125, y=30)
+    #canvas = Canvas(height=300,width=300)
+    #canvas.create_image(200,100,image=image)
+    #canvas.place(x=0, y=10)
 except TclError:
-    display = Label(window, text="Image not found")
-    display.place(x=125, y=20)
+    display = Label(window, text="Image not found!")
+    display.place(x=125, y=100)
 
 Label(window, text="Enter your title").place(x=35, y=200)
 title_Entry= Entry(window, textvariable=var_Title, border=0.5, width=35)
