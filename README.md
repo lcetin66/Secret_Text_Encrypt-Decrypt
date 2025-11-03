@@ -1,1 +1,3 @@
+![Alt](images/preview.png)
+
 thinker, cryptography.fernet, base64, and os libraries are used to encrypt the input text with the given master key and, when requested, decrypt the message using the same master key to make it readable.
