@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter import filedialog, PhotoImage, Label
+from tkinter import filedialog, PhotoImage, Label, messagebox
 from cryptography.fernet import Fernet
 import base64
 import os
@@ -27,18 +27,21 @@ def save_and_encrypt():
     title = var_Title.get().strip()
     if not title:
         display.config(text="No title entered!")
+        #messagebox.showinfo("Error","No title entered!")
         return
 
     # get the secret text
     text_content = TextSecret.get("1.0", END).strip().encode()
     if not text_content:
         display.config(text="No text content has been entered.")
+        #messagebox.showinfo("Error", "No text content has been entered.")
         return
 
     # get the master key
     password = var_MasterKey.get().strip()
     if not password:
         display.config(text="Master key not entered!")
+        #messagebox.showinfo("Error", "Master key not entered!")
         return
 
     # file save path
@@ -57,6 +60,7 @@ def save_and_encrypt():
         with open(file_path, "wb") as file:
             file.write(encrypted)
         display.config(text="The file has been saved and encrypted.")
+        #messagebox.showinfo("Error", "The file has been saved and encrypted.")
     except Exception as error:
         display.config(text=str(error))
 
@@ -72,6 +76,7 @@ def decrypt_file():
     password = var_MasterKey.get().strip()
     if not password:
         display.config(text="Master key not entered!")
+        #messagebox.showinfo("Error","Master key not entered!")
         return
 
     file_path = filedialog.askopenfilename(
@@ -97,6 +102,7 @@ def decrypt_file():
         display.config(text="The file has been decrypted.")
     except Exception as e:
         display.config(text="The file password could not be decrypted.: " + str(e))
+        #messagebox.showinfo("Error","The file password could not be decrypted.: " + str(e))
 
 # --- GUI ---
 try:
