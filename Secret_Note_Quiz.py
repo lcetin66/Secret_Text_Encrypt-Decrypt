@@ -115,7 +115,11 @@ title_Entry= Entry(window, textvariable=var_Title, border=0.5, width=35)
 title_Entry.place(x=35, y=220)
 
 Label(window, text="Enter your secret").place(x=35, y=250)
-TextSecret = Text(window, borderwidth=0.5, width=44, height=15)
+TextSecret = Text(window, background="black",
+                 foreground="white",
+                 wrap="word",
+                 width=45,
+                 height=15)
 TextSecret.place(x=38, y=280)
 
 Label(window, text="Enter master key").place(x=35, y=490)
